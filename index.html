@@ -273,53 +273,74 @@
   }
 
   /* KEYNOTE SPEAKERS */
-  .keynote-section {
-    background: #fff;
-    padding: 70px 80px;
-    text-align: center;
-  }
-  .keynote-section h2 {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 900;
-    font-size: 36px;
-    color: var(--text-dark);
-    margin-bottom: 50px;
-  }
-  .keynote-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
-    max-width: 900px;
-    margin: 0 auto;
-  }
-  .keynote-card {
-    border-radius: 20px;
-    padding: 50px 24px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 240px;
-  }
-  .keynote-card.cyan-card { background: var(--cyan); }
-  .keynote-card.pink-card { background: var(--pink); }
-  .keynote-card h3 {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 900;
-    font-size: 24px;
-    line-height: 1.2;
-    margin-bottom: 16px;
-    color: #000;
-  }
-  .keynote-card.pink-card h3 { color: #fff; }
-  .keynote-card p {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 700;
-    font-size: 13px;
-    line-height: 1.5;
-    color: #000;
-  }
-  .keynote-card.pink-card p { color: #fff; }
+  /* KEYNOTE SPEAKERS */
+.keynote-section {
+  background: #fff;
+  padding: 70px 80px;
+  text-align: center;
+}
+
+.keynote-section h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 900;
+  font-size: 36px;
+  color: var(--text-dark);
+  margin-bottom: 50px;
+}
+
+.keynote-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.keynote-card {
+  border-radius: 20px;
+  padding: 32px 24px;
+  text-align: left;
+  min-height: 100%;
+}
+
+.keynote-card.cyan-card {
+  background: var(--cyan);
+}
+
+.keynote-card.pink-card {
+  background: var(--pink);
+}
+
+.keynote-card h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 900;
+  font-size: 24px;
+  line-height: 1.15;
+  margin-bottom: 10px;
+  color: #000;
+}
+
+.keynote-card.pink-card h3,
+.keynote-card.pink-card p,
+.keynote-card.pink-card .speaker-role {
+  color: #fff;
+}
+
+.speaker-role {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+  font-size: 13px;
+  margin-bottom: 18px;
+  color: #000;
+}
+
+.keynote-card p {
+  font-size: 13.5px;
+  line-height: 1.65;
+  color: #111;
+  margin-bottom: 12px;
+}
+  
 
   /* SCHEDULE */
   .schedule-section {
@@ -520,18 +541,161 @@
   .social-btn.youtube { background: #ff0000; }
 
   @media (max-width: 900px) {
-    .hero { grid-template-columns: 1fr; }
-    .hero-right { height: 300px; }
-    .info-section { grid-template-columns: 1fr; padding: 40px 30px; gap: 30px; }
-    .countdown-section { padding: 30px; }
-    .countdown-num, .countdown-sep { font-size: 44px; }
-    .expect-section, .speaker-section, .schedule-section, .keynote-section { padding: 50px 30px; }
-    .expect-grid, .schedule-grid, .keynote-grid { grid-template-columns: 1fr; }
-    .location-inner { grid-template-columns: 1fr; }
-    .location-section, .contact-section { padding: 50px 30px; }
-    .contact-details { gap: 24px; flex-direction: column; align-items: center; }
-    .contact-item { text-align: center; flex-direction: column; gap: 6px; }
+  nav {
+    padding: 12px 16px;
+    gap: 12px;
   }
+
+  nav img {
+    max-width: 140px;
+    height: auto;
+  }
+
+  .btn-register {
+    padding: 10px 14px;
+    font-size: 12px;
+    white-space: nowrap;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+
+  .hero-left {
+    padding: 44px 22px;
+    text-align: center;
+    align-items: center;
+  }
+
+  .hero h1 {
+    font-size: clamp(34px, 10vw, 48px);
+  }
+
+  .hero-meta {
+    font-size: 12px;
+  }
+
+  .hero-right {
+    height: 260px;
+  }
+
+  .hero-socials {
+    right: 50%;
+    transform: translateX(50%);
+  }
+
+  .info-section,
+  .expect-section,
+  .keynote-section,
+  .schedule-section,
+  .location-section,
+  .contact-section {
+    padding: 44px 20px;
+  }
+
+  .info-section,
+  .location-inner {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .info-left h2,
+  .keynote-section h2,
+  .schedule-section h2,
+  .location-section h2,
+  .contact-section h2 {
+    font-size: 28px;
+  }
+
+  .countdown-section {
+    padding: 32px 12px 44px;
+  }
+
+  .countdown {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px 8px;
+  }
+
+  .countdown-sep {
+    display: none;
+  }
+
+  .countdown-item {
+    padding: 0;
+  }
+
+  .countdown-num {
+    font-size: 44px;
+  }
+
+  .expect-grid,
+  .expect-images,
+  .keynote-grid,
+  .schedule-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .expect-images .img-placeholder {
+    height: 220px;
+  }
+
+  .keynote-card {
+    min-height: auto;
+    padding: 36px 22px;
+  }
+
+  .map-container iframe {
+    min-height: 320px;
+  }
+
+  .contact-details {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .contact-item {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .contact-socials {
+    flex-direction: column;
+  }
+
+  .social-btn {
+    justify-content: center;
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  nav {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .hero-left {
+    padding: 36px 18px;
+  }
+
+  .hero-right {
+    height: 220px;
+  }
+
+  .info-right p {
+    font-size: 14px;
+  }
+
+  .countdown-num {
+    font-size: 38px;
+  }
+
+  .schedule-time {
+    font-size: 16px;
+  }
+}
 </style>
 </head>
 <body>
@@ -632,19 +796,88 @@
 <!-- KEYNOTE SPEAKERS -->
 <section class="keynote-section">
   <h2>Our 2026 Keynote Speakers</h2>
+
   <div class="keynote-grid">
+
+    <!-- SPEAKER 1 -->
     <div class="keynote-card cyan-card">
       <h3>EMMANUEL<br>KPANJA</h3>
-      <p>Founder &amp;<br>Entrepreneur</p>
+
+      <div class="speaker-role">
+        Finance Professional, Entrepreneur &amp; Business Strategist
+      </div>
+
+      <p>
+        Emmanuel Kpanja is a finance professional, entrepreneur, and business strategist with over 20 years of experience across banking, public service, and enterprise development in Nigeria, plus 4 years in Canada.
+      </p>
+
+      <p>
+        He holds BSc, MBA, and MSc qualifications and has worked with First Bank and Zenith Bank Plc, rising to Deputy Manager while overseeing operations across multiple branches.
+      </p>
+
+      <p>
+        Beyond banking, Emmanuel successfully ran a poultry farming business and invested in real estate, reflecting his belief in multiple income streams.
+      </p>
+
+      <p>
+        Now based in Canada, he works with the Federal Government of Canada while building businesses in life insurance and as founder of Ahtshok, an African grocery venture focused on underserved communities.
+      </p>
+
+      <p>
+        At this summit, Emmanuel shares practical insights on how to start smart, scale fast, and build lasting success.
+      </p>
     </div>
+
+    <!-- SPEAKER 2 -->
     <div class="keynote-card pink-card">
       <h3>ADEDAYO<br>OJO</h3>
-      <p>Business Advisor,<br>Black Business Initiative</p>
+
+      <div class="speaker-role">
+        Business Advisor, Black Business Initiative
+      </div>
+
+      <p>
+        Adedayo Ojo is a Business Advisor with the Black Business Initiative (BBI) and an entrepreneur supporting Black entrepreneurs and business owners in developing, strengthening, and scaling their ventures.
+      </p>
+
+      <p>
+        She holds a Master’s in Technology Entrepreneurship and Innovation and brings experience in business development, ecosystem support, and entrepreneurship programming.
+      </p>
+
+      <p>
+        She is passionate about helping founders access the tools, networks, and knowledge needed to build sustainable and scalable businesses.
+      </p>
     </div>
+
+    <!-- SPEAKER 3 -->
     <div class="keynote-card cyan-card">
       <h3>BUSOLA<br>ADENIJI</h3>
-      <p>Director,<br>Halifax Chamber of Commerce</p>
+
+      <div class="speaker-role">
+        Director of Finance &amp; Administration, Halifax Chamber of Commerce
+      </div>
+
+      <p>
+        Originally from Ikere Ekiti, Nigeria, Busola studied at the University of Ibadan before beginning her career in the UBA Graduate Program and later joining KPMG Nigeria.
+      </p>
+
+      <p>
+        She later worked in the United Kingdom for 14 years, including roles as Financial Analyst at Bank of America Merrill Lynch and IT Finance Business Partner at Unilever.
+      </p>
+
+      <p>
+        Busola earned her ACCA designation in 2013 and obtained her CPA Nova Scotia designation in 2021.
+      </p>
+
+      <p>
+        Since July 2024, she has served as Director of Finance &amp; Administration at the Halifax Chamber of Commerce while continuing to contribute to community leadership initiatives.
+      </p>
+
+      <p>
+        She also serves on her church leadership team and as Treasurer on the BBI Board.
+      </p>
     </div>
+
   </div>
 </section>
 
@@ -682,7 +915,7 @@
     </div>
     <div class="schedule-item">
       <div class="schedule-time pink-bg">12:35 PM</div>
-      <div class="schedule-label">Session 1: Start Small</div>
+      <div class="schedule-label">Session 1: Start Smart</div>
     </div>
     <div class="schedule-item">
       <div class="schedule-time cyan-bg">1:05 PM</div>
